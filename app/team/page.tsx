@@ -31,7 +31,7 @@ const page = () => {
           description="As the Director of Net Motors, I am personally committed to ensuring total transparency and the highest level of customer service through the strategic deployment of cutting-edge digital tools and technologies."
         />
         <Team
-          department="DIRECTOR"
+          department="IT"
           image={Pfurumbwi}
           name="Takudzwa W Manhovo"
           description="At Net Motors, we are dedicated to delivering an exceptional car buying experience for our customers through innovative use of technology."

@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa"; // Import Chevron icons
+import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Image from "next/image";
 import Logo from "../public/images/logo.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState(""); // Add a state to track the active link
+  const [activeLink, setActiveLink] = useState(""); // State to track the active link
   const [dropdownOpen, setDropdownOpen] = useState(false); // Track dropdown state
 
   const toggleMenu = () => {
@@ -16,9 +16,12 @@ const Navbar = () => {
   };
 
   const handleLinkClick = (link: string) => {
-    setActiveLink(link); // Update the active link state when a link is clicked
+    setActiveLink(link); // Update the active link state
     if (link !== "more") {
       setDropdownOpen(false); // Close the dropdown if any link other than "more" is clicked
+    }
+    if (window.innerWidth < 768) {
+      setMenuOpen(false); // Close the menu on small devices after clicking a link
     }
   };
 
@@ -28,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r relative from-red/20 via-grey/60 md:w-[80%] shadow-lg to-red/20 w-full h-[4.5vh] lg:h-[6.5vh] z-50 flex justify-between md:justify-center items-center px-4 md:px-8">
+    <nav className="bg-gradient-to-r relative from-red/20 via-grey/60 md:w-[80%] shadow-lg to-red/20 w-full h-[6vh] lg:h-[6.5vh] z-50 flex justify-between md:justify-center items-center px-4 md:px-8">
       <div className="w-[10%] md:absolute left-[-4%] top-[50%]">
         <Image src={Logo} alt="Logo" />
       </div>
@@ -43,7 +46,7 @@ const Navbar = () => {
 
       {/* Links */}
       <ul
-        className={`md:flex md:space-x-8 text-black font-bold items-center absolute md:relative top-[4.5vh] md:top-0 left-0 w-full bg-red md:bg-transparent md:w-auto transition-transform duration-300 ease-in-out transform ${
+        className={`md:flex md:space-x-8 text-black font-bold items-center absolute md:relative top-[4.5vh] md:top-0 left-0 w-[70%] bg-red md:bg-transparent md:w-auto transition-transform duration-300 ease-in-out transform ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`}
       >
@@ -79,7 +82,9 @@ const Navbar = () => {
         <li className="p-4 md:p-0 relative">
           <button
             onClick={toggleDropdown}
-            className={`hover:text-yellow flex items-center ${activeLink === "more" ? "text-yellow" : ""}`}
+            className={`hover:text-yellow flex items-center ${
+              activeLink === "more" ? "text-yellow" : ""
+            }`}
           >
             More
             {dropdownOpen ? (

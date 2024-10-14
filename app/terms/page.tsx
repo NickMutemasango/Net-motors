@@ -7,6 +7,7 @@ import Testimonials from "../components/testimonials";
 import Herbert from "../../public/images/herbert.svg";
 import Nomsa from "../../public/images/nomsa.svg";
 import Guru from "../../public/images/guru.svg";
+import Testimon from "../../public/images/testimon.svg";
 
 const page = () => {
   return (
@@ -50,7 +51,18 @@ const page = () => {
       </div>
 
       {/* Testimoninals */}
-
+      <div className="flex relative justify-center items-center py-4 md:py-8 ">
+        <Image
+          src={Testimon}
+          alt=""
+          className="md:absolute  w-[40%] lg:absolute left-5 md:w-[20%] lg:w-[15%] xl:w-[20%] "
+        />
+        <Image
+          src={Heading}
+          alt=""
+          className="md:w-[20%]  lg:w-[40%] xl:w-[40%] xl:left-40 md:left-40 w-[50%]"
+        />
+      </div>
       <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0  md:space-x-5">
         <Testimonials
           image={Herbert}

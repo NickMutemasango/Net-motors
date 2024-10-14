@@ -27,13 +27,13 @@ export default function Home() {
           <Image src={Behance} alt="" className="w-[30px]  md:w-[35px]" />
         </Link>
       </div>
-      <h2 className="absolute bottom-16 text-[15px] md:text-4xl md:bottom-20 font-semibold text-white lg:text-5xl lg:bottom-16 xl:bottom-14">
+      <h2 className="absolute bottom-16 text-[20px] md:text-4xl md:bottom-20 font-semibold text-white lg:text-5xl lg:bottom-16 xl:bottom-14">
         Find Your Perfect Ride with Net Motors 
       </h2>
       <Image
         src={Heading}
         alt=""
-        className="xl:w-[33%] w-[50%] top-[9vh] lg:w-[35%]  lg:top-20 absolute xl:top-24"
+        className="xl:w-[33%] w-[80%] top-[9vh] lg:w-[35%]  lg:top-20 absolute xl:top-24"
       />
     </div>
   );
